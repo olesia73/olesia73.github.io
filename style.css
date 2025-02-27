@@ -1,7 +1,23 @@
-* {
-    color: #6d9886;
-    background-color: #393e46;
-}
+
 h1 {
     line-height: 10pt;
 }
+li {
+    float: right;
+    display: block;
+}
+ul {
+    list-style-type: none;
+    position: fixed;
+    background-color: pink;
+}
+    li a:hover {
+        background-color: hotpink;
+    }
+    .active {
+        background-color: azure;
+    }
+    * {
+        color: #6d9886;
+        background-color: #393e46;
+    }

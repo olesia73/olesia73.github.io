@@ -45,6 +45,6 @@
         display: flex;
         flex-flow: row wrap;
         align-items: stretch;
-        justify-content: right;
+        justify-content: space-evenly;
     }
     

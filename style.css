@@ -38,6 +38,13 @@
         background-color: #6d9886;
         padding: 0px;
         margin: 40px;
-        width: 544px;
       }
+    /* flexbox attempt */
+    /* "More" page */
+    .flexing {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        justify-content: right;
+    }
     

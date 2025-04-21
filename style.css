@@ -14,7 +14,7 @@
     nav a {
         background-color: #6d9886;
     }
-    nav a:not(.lang) {
+    nav a:not(#lang) {
         display: block;
         padding: 8px;
         text-align: center;
@@ -24,19 +24,19 @@
         border-right: 1px solid #393e46;
         border-left: 1px solid #393e46;
     }
-    nav a:hover:not(.lang) {
+    nav a:hover:not(#lang) {
         background-color: aliceblue;
     }
     .active {
         background-color: #4c826c;
     }
-    .lang {
+    #lang {
         position: fixed;
         height: 26px;
         top: 4px;
         right: 4px;
     }
-    .lang img {
+    #lang img {
         background-color: #6d9886;
     }
     * {

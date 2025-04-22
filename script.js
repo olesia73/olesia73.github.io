@@ -61,15 +61,15 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 
 //let english = true;
+
 let english = localStorage.getItem('english');
 if (null === english) {
     localStorage.setItem("english", "eng");
 }
-// window.addEventListener("load", () => {
-//     if (null === english) {
-//       localStorage.setItem("english", "eng");
-//     }
-//   });
+else if (english === "ukr") {
+    english = "eng";
+    langChange();
+}
 
 function langChange() {
     if (english === "eng") {
@@ -130,8 +130,7 @@ function langChange() {
         }
         localStorage.setItem("english", "eng");
     }
-    // localStorage.setItem("english", !english);
-    // english = !english;
+    english = localStorage.getItem('english');
 }
 
 // switch(page) {

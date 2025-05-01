@@ -123,6 +123,9 @@
     * {
         cursor: none;
     }
+    html {
+        height: 100%;
+    }
     .cursor {
         position: absolute;
         top: 0;
@@ -135,6 +138,6 @@
         pointer-events: none;
         background-image: url('cursor.png');
     }
-    .cursor.active {
-        width: 100px;
-    }
+    /* .cursor.active {
+        background-image: url('click.png');
+    } */

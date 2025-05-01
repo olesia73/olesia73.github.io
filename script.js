@@ -7,7 +7,7 @@ const language = {
         name: "Olesia Bilyk",
         pronunciation: "[oh-LEH-sia BEE-luhk]",
         home: "Home",
-        about: "About me",
+        library: "Library",
         more: "More",
         media: "Find me on social media:",
         recording: "Here's a recording of my talk on Convolutional Networks while at KAIST Complexity and Real Computation Lab:",
@@ -20,7 +20,7 @@ const language = {
         name: "Білик Олеся",
         pronunciation: "",
         home: "Домашня сторінка",
-        about: "Про мене",
+        library: "Бібліотека",
         more: "Більше",
         media: "Я тут в соцмережах:",
         recording: "Це запис мого виступу на тему конволюційних мереж під час самостійного навчання у лабораторії в KAIST (англійською):",
@@ -79,22 +79,21 @@ function langChange() {
                 my_name.textContent = language.ukr.name;
                 pronunciation.textContent = language.ukr.pronunciation;
                 home.textContent = language.ukr.home;
-                about.textContent = language.ukr.about;
+                library.textContent = language.ukr.library;
                 more.textContent = language.ukr.more;
                 media.textContent = language.ukr.media;
+                cv.innerHTML = language.ukr.cv;
                 break;
-            case "about.html":
+            case "library.html":
                 lang_img.src = language.ukr.lang_img;
                 home.textContent = language.ukr.home;
-                about.textContent = language.ukr.about;
+                library.textContent = language.ukr.library;
                 more.textContent = language.ukr.more;
-                cv.innerHTML = language.ukr.cv;
-                favs.textContent = language.ukr.favs;
                 break;
             case "more.html":
                 lang_img.src = language.ukr.lang_img;
                 home.textContent = language.ukr.home;
-                about.textContent = language.ukr.about;
+                library.textContent = language.ukr.library;
                 more.textContent = language.ukr.more;
                 recording.textContent = language.ukr.recording;
                 break;
@@ -108,22 +107,21 @@ function langChange() {
                 my_name.textContent = language.eng.name;
                 pronunciation.textContent = language.eng.pronunciation;
                 home.textContent = language.eng.home;
-                about.textContent = language.eng.about;
+                library.textContent = language.eng.library;
                 more.textContent = language.eng.more;
                 media.textContent = language.eng.media;
+                cv.innerHTML = language.eng.cv;
                 break;
-            case "about.html":
+            case "library.html":
                 lang_img.src = language.eng.lang_img;
                 home.textContent = language.eng.home;
-                about.textContent = language.eng.about;
+                library.textContent = language.eng.library;
                 more.textContent = language.eng.more;
-                cv.innerHTML = language.eng.cv;
-                favs.textContent = language.eng.favs;
                 break;
             case "more.html":
                 lang_img.src = language.eng.lang_img;
                 home.textContent = language.eng.home;
-                about.textContent = language.eng.about;
+                library.textContent = language.eng.library;
                 more.textContent = language.eng.more;
                 recording.textContent = language.eng.recording;
                 break;
@@ -133,18 +131,7 @@ function langChange() {
     english = localStorage.getItem('english');
 }
 
-// switch(page) {
-//     case "index.html":
-//         lang.addEventListener("click", langChange);
-//         break;
-//     case "about.html":
-//         lang2.addEventListener("click", langChange);
-//         break;
-//     case "more.html":
-//         lang3.addEventListener("click", langChange);
-//         break;
 
-// }
 
 lang.addEventListener("click", langChange);
 
@@ -174,7 +161,7 @@ document.addEventListener('click', () => {
 
 //
 // Modal
-if (page == "about.html") {
+if (page == "library.html") {
     const open = document.getElementById('open');
     const modal = document.getElementById('modal');
     const close = document.getElementById('close');

@@ -172,3 +172,36 @@ document.addEventListener('click', () => {
 //
 //
 
+//
+// Modal
+if (page == "about.html") {
+    const open = document.getElementById('open');
+    const modal = document.getElementById('modal');
+    const close = document.getElementById('close');
+
+    open.addEventListener('click', (event) => {
+        modal.classList.add('show');
+        modal.style.top = `${event.clientY}px`;
+        modal.style.left = `${event.clientX / 2}px`;
+        // modal.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        
+    })
+    close.addEventListener('click', () => {
+        modal.classList.remove('show');
+    })
+}
+//
+//
+
+
+// Dark Mode
+const btn = document.getElementById('btn-toggle');
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+btn.addEventListener("click", () => {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-theme");
+  } else {
+    document.body.classList.toggle("dark-theme");
+  }
+});

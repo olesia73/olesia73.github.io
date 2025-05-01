@@ -172,42 +172,29 @@
     }
     
     /* Dark mode */
-    /* body {
-        background: var(--bkg-color);
+    #btn-toggle img {
+        height: 24px;
     }
-    body.dark-theme {
-        --bkg-color: goldenrod;
+    #btn-toggle {
+        position: absolute;
+        top: 0;
+        z-index: 9;
+        left: 3px;
     }
-    @media (prefers-color-scheme: light) {
-        * {
-            --bkg-color: #393e46;
-        }
-        *.light-theme {
-            --bkg-color: goldenrod;
-        }
-    }
-    @media (prefers-color-scheme: dark) {
-        * {
-            --bkg-color: goldenrod;
-        }
-        *.light-theme {
-            --bkg-color: #393e46;
-        }
-    } */
 
     body {
-        --bkg-color: #393e46;
+        --bkg-color: #fff;
     }
     body.light-theme {
-        --bkg-color: #fff;
+        --bkg-color: #393e46;
     }
       
     @media (prefers-color-scheme: light) {
         body {
-          --bkg-color: #fff;
+          --bkg-color: #393e46;
         }
         body.dark-theme {
-          --bkg-color: #393e46;
+          --bkg-color: #fff;
         }
       }
       body {

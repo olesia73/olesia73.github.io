@@ -117,3 +117,24 @@
         transform: rotate(60deg);
     }
    
+    
+
+    /* Cursor section */
+    * {
+        cursor: none;
+    }
+    .cursor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: none;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(0,0,0,0);
+        pointer-events: none;
+        background-image: url('cursor.png');
+    }
+    .cursor.active {
+        width: 100px;
+    }

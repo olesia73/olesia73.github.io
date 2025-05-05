@@ -96,13 +96,11 @@
         border: 0;
         display: flex;
         justify-content: center;
-        /* transition: transform 0.8s; */
     }
     .book img {
         width: 100%;
         height: 100%;
         object-fit: fill;
-        
     }
     .turned {
         transform: rotate(-90deg);
@@ -122,16 +120,24 @@
     
 
     /* Cursor section */
-    * {
-        cursor: none;
+    .text, p, h1, h2, h3 {
+        cursor: url('text.png') 15 15, text;
     }
-    html {
+    button, input, a, #home, #library, #more {
+        cursor: url('click.png') 15 15, pointer;
+    }
+    body {
+        height: 100vh;
+        /*cursor: none; */
+        cursor: url('cursor.png'), auto;
+    }
+    /* html {
         height: 100%;
     }
     .cursor {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 0; 
         z-index: 10;
         display: none;
         width: 30px;
@@ -140,9 +146,9 @@
         pointer-events: none;
         background-image: url('cursor.png');
     }
-    /* .cursor.active {
+    .cursor.active {
         background-image: url('click.png');
-    } */
+    }  */
      
 
     /* Modal section */
@@ -163,12 +169,11 @@
         pointer-events: auto; 
     }
     #open {
+        border: 0;
+        padding: 0;
         width: 100%;
         height: 100%;
         object-fit: fill;
-    }
-    #open img {
-        opacity: 0;
     }
     
     /* Dark mode */

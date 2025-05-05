@@ -137,27 +137,30 @@ lang.addEventListener("click", langChange);
 
 //
 // Cursor
-const cursor = document.querySelector(".cursor");
-document.addEventListener('mouseenter', () => {
-    cursor.style.display = 'block';
-});
-document.addEventListener('mouseleave', () => {
-    cursor.style.display = 'none';
-});
-document.addEventListener('mousemove', (event) => {
-    cursor.style.display = 'block';
-    cursor.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
-});
-document.addEventListener('click', () => {
-    cursor.classList.add('active');
-    //cursor.style.background-image = url('click.png');
-    setTimeout(() => {
-        cursor.classList.remove('active')
-    }, 500);
-});
-// document.addEventListener('mouseup', () => cursor.classList.remove('active'));
+// I ended up finding a much simpler solution when dong minor fixes 
+// but was too sorry to delete it
+//
+// const cursor = document.querySelector(".cursor");
+// document.addEventListener('mouseenter', () => {
+//     cursor.style.display = 'block';
+// });
+// document.addEventListener('mouseleave', () => {
+//     cursor.style.display = 'none';
+// });
+// document.addEventListener('mousemove', (event) => {
+//     cursor.style.display = 'block';
+//     cursor.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+// });
+// document.addEventListener('click', () => {
+//     cursor.classList.add('active');
+//     //cursor.style.background-image = url('click.png');
+//     setTimeout(() => {
+//         cursor.classList.remove('active')
+//     }, 500);
+// });
 //
 //
+
 
 //
 // Modal

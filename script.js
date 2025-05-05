@@ -1,8 +1,6 @@
-// //var dataReload = document.querySelectorAll("[data-reload]");
-
 const language = {
     eng: {
-        switch: "#eng",
+        switch: "ukr",
         lang_img: "eng.png",
         name: "Olesia Bilyk",
         pronunciation: "[oh-LEH-sia BEE-luhk]",
@@ -15,7 +13,7 @@ const language = {
         favs: "And here are my favourite books:"
     },
     ukr: {
-        switch: "#ukr",
+        switch: "eng",
         lang_img: "ukr.png",
         name: "Білик Олеся",
         pronunciation: "",
@@ -29,38 +27,9 @@ const language = {
     }
 };
 
-// if (window.location.hash && window.location.hash === "#ukr") {
-//     lang.href = language.ukr.switch;
-//     lang_img.src = language.ukr.lang_img;
-//     myName.textContent = language.ukr.name;
-// }
-// else {
-//     lang.href = language.eng.switch;
-//     lang_img.src = language.eng.lang_img;
-//     myName.textContent = language.eng.name;
-// }
-// // link.forEach(el=>{
-// //     el.addEventListener("click", ()=>{
-// //          langs.querySelector(".active").classList.remove("active");
-// //          el.classList.add("active");
-// //     })
-// // })
-
-// for (i = 0; i <= dataReload.length; ++i) {
-//     dataReload[i].onclick = function() {
-//         setTimeout(function () {
-//             location.reload = true;
-//           }, 200);
-        
-//     }
-
-// }
-
 
 var path = window.location.pathname;
 var page = path.split("/").pop();
-
-//let english = true;
 
 let english = localStorage.getItem('english');
 if (null === english) {
@@ -72,66 +41,35 @@ else if (english === "ukr") {
 }
 
 function langChange() {
-    if (english === "eng") {
-        switch (page) {
-            case "index.html":
-                lang_img.src = language.ukr.lang_img;
-                my_name.textContent = language.ukr.name;
-                pronunciation.textContent = language.ukr.pronunciation;
-                home.textContent = language.ukr.home;
-                library.textContent = language.ukr.library;
-                more.textContent = language.ukr.more;
-                media.textContent = language.ukr.media;
-                cv.innerHTML = language.ukr.cv;
-                break;
-            case "library.html":
-                lang_img.src = language.ukr.lang_img;
-                home.textContent = language.ukr.home;
-                library.textContent = language.ukr.library;
-                more.textContent = language.ukr.more;
-                break;
-            case "more.html":
-                lang_img.src = language.ukr.lang_img;
-                home.textContent = language.ukr.home;
-                library.textContent = language.ukr.library;
-                more.textContent = language.ukr.more;
-                recording.textContent = language.ukr.recording;
-                break;
-        }
-        localStorage.setItem("english", "ukr");
-    }
-    else {
-        switch (page) {
-            case "index.html":
-                lang_img.src = language.eng.lang_img;
-                my_name.textContent = language.eng.name;
-                pronunciation.textContent = language.eng.pronunciation;
-                home.textContent = language.eng.home;
-                library.textContent = language.eng.library;
-                more.textContent = language.eng.more;
-                media.textContent = language.eng.media;
-                cv.innerHTML = language.eng.cv;
-                break;
-            case "library.html":
-                lang_img.src = language.eng.lang_img;
-                home.textContent = language.eng.home;
-                library.textContent = language.eng.library;
-                more.textContent = language.eng.more;
-                break;
-            case "more.html":
-                lang_img.src = language.eng.lang_img;
-                home.textContent = language.eng.home;
-                library.textContent = language.eng.library;
-                more.textContent = language.eng.more;
-                recording.textContent = language.eng.recording;
-                break;
-        }
-        localStorage.setItem("english", "eng");
+    let lang = language[english].switch;
+    localStorage.setItem("english", lang);
+    switch (page) {
+        case "index.html":
+            lang_img.src = language[lang].lang_img;
+            my_name.textContent = language[lang].name;
+            pronunciation.textContent = language[lang].pronunciation;
+            home.textContent = language[lang].home;
+            library.textContent = language[lang].library;
+            more.textContent = language[lang].more;
+            media.textContent = language[lang].media;
+            cv.innerHTML = language[lang].cv;
+            break;
+        case "library.html":
+            lang_img.src = language[lang].lang_img;
+            home.textContent = language[lang].home;
+            library.textContent = language[lang].library;
+            more.textContent = language[lang].more;
+            break;
+        case "more.html":
+            lang_img.src = language[lang].lang_img;
+            home.textContent = language[lang].home;
+            library.textContent = language[lang].library;
+            more.textContent = language[lang].more;
+            recording.textContent = language[lang].recording;
+            break;
     }
     english = localStorage.getItem('english');
 }
-
-
 
 lang.addEventListener("click", langChange);
 
@@ -167,8 +105,8 @@ lang.addEventListener("click", langChange);
 if (page == "library.html") {
     const open = document.getElementById('open');
     const modal = document.getElementById('modal');
-    const close = document.getElementById('close');
-
+    const close = document.querySelector('.close');
+    // const close = document.getElementById('close');
     open.addEventListener('click', (event) => {
         modal.classList.add('show');
         modal.style.top = `${event.clientY}px`;

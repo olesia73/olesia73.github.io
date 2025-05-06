@@ -103,15 +103,15 @@
 
     /* Cursor section */
     .text, p, h1, h2, h3 {
-        cursor: url('text.png') 15 15, text;
+        cursor: url('cursor/text.png') 15 15, text;
     }
     button, input, a, #home, #library, #more {
-        cursor: url('click.png') 15 15, pointer;
+        cursor: url('cursor/click.png') 15 15, pointer;
     }
     body {
         height: 100vh;
         /*cursor: none; */
-        cursor: url('cursor.png'), auto;
+        cursor: url('cursor/cursor.png'), auto;
     }
     /* .cursor {
         position: absolute;

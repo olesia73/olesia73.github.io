@@ -44,16 +44,6 @@ function langChange() {
     let lang = language[english].switch;
     localStorage.setItem("english", lang);
     switch (page) {
-        case "index.html":
-            lang_img.src = language[lang].lang_img;
-            my_name.textContent = language[lang].name;
-            pronunciation.textContent = language[lang].pronunciation;
-            home.textContent = language[lang].home;
-            library.textContent = language[lang].library;
-            more.textContent = language[lang].more;
-            media.textContent = language[lang].media;
-            cv.innerHTML = language[lang].cv;
-            break;
         case "library.html":
             lang_img.src = language[lang].lang_img;
             home.textContent = language[lang].home;
@@ -67,11 +57,43 @@ function langChange() {
             more.textContent = language[lang].more;
             recording.textContent = language[lang].recording;
             break;
+        // case "index.html":
+        default:
+            lang_img.src = language[lang].lang_img;
+            my_name.textContent = language[lang].name;
+            pronunciation.textContent = language[lang].pronunciation;
+            home.textContent = language[lang].home;
+            library.textContent = language[lang].library;
+            more.textContent = language[lang].more;
+            media.textContent = language[lang].media;
+            cv.innerHTML = language[lang].cv;
+            break;
     }
     english = localStorage.getItem('english');
 }
 
 lang.addEventListener("click", langChange);
+
+// Dark Mode
+const btn = document.getElementById('toggle');
+if (null === localStorage.getItem('dark_mode')) {
+    localStorage.setItem("dark_mode", window.matchMedia("(prefers-color-scheme: dark)").matches);
+}
+else if (localStorage.getItem('dark_mode') === 'true') {
+    document.body.classList.add("dark-theme");
+    document.body.classList.remove("light-theme");
+}
+btn.addEventListener("click", () => {
+  if (localStorage.getItem('dark_mode') === 'true') {
+    document.body.classList.add("light-theme");
+    document.body.classList.remove("dark-theme");
+    localStorage.setItem("dark_mode", false);
+  } else {
+    document.body.classList.add("dark-theme");
+    document.body.classList.remove("light-theme");
+    localStorage.setItem("dark_mode", true);
+  }
+});
 
 //
 // Cursor
@@ -98,19 +120,3 @@ lang.addEventListener("click", langChange);
 // });
 //
 //
-
-
-
-
-
-// Dark Mode
-const btn = document.getElementById('btn-toggle');
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-btn.addEventListener("click", () => {
-  if (prefersDarkScheme.matches) {
-    document.body.classList.toggle("light-theme");
-  } else {
-    document.body.classList.toggle("dark-theme");
-  }
-});

@@ -1,5 +1,3 @@
-
-// const open = document.getElementById('open');
 let modal = [];
 let open = [];
 let desc = [];

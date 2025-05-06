@@ -75,6 +75,8 @@ function langChange() {
 lang.addEventListener("click", langChange);
 
 // Dark Mode
+// Works similarly to language in terms of using local storage to keep the value when switching between pages, but loads the initial value from media query
+// Also, I haven't used js variable for localStorage variable here
 const btn = document.getElementById('toggle');
 if (null === localStorage.getItem('dark_mode')) {
     localStorage.setItem("dark_mode", window.matchMedia("(prefers-color-scheme: dark)").matches);

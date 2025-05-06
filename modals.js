@@ -1,11 +1,13 @@
+// Script for the modals on library page
 let modal = [];
 let open = [];
-let desc = [];
+let desc = []; // array for character count for modal typewriter
 let close = [];
 modal.push(document.querySelector('modal'));
 open.push(document.querySelector('book'));
 desc.push(0);
 close.push(document.querySelector('.close'));
+// Generates arrays of buttons and loads correct images for modals
 for (let j = 1; j <= 19; j++) {
     modal.push(document.getElementById('m'+String(j)));
     open.push(document.getElementById('b'+String(j)));

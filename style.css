@@ -161,11 +161,6 @@
         height: 100%;
         object-fit: fill;
     }
-    .close img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
     .close {
         width: 120px;
         min-width: 120px;
@@ -189,7 +184,6 @@
     /* Dark mode */
     #toggle img {
         object-fit: fill;
-        /* background-color: #393e46; */
         width: 100%;
         height: 100%;
         margin: 0;

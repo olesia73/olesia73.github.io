@@ -4,6 +4,7 @@
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="script.js"></script> 
+    <script type="module" src="modals.js"></script>
 </head>
 <body>
     <!-- <div class="cursor"></div> -->
@@ -28,10 +29,10 @@
             <div class="turned book">
                 
             </div>
-            <button class="book" type="button" id="open">
+            <button class="book" type="button" id="b1">
                 <img src="books/book_1.jpeg">
             </button>
-            <button class="book" type="button" >
+            <button class="book" type="button" id="b2">
                 <img src="books/book_2.jpeg">
             </button>
             <div class="turned book">
@@ -122,8 +123,13 @@
 
 
     <!-- Modals -->
-    <div id="modal">Here will be the book description.
+    <div class='modal' id="m1">
+        <div class="description"></div>
         <button type="button" class="close"><img src="books/book_1.jpeg"></button>
+    </div>
+    <div class='modal' id="m2">
+        <div class="description"></div>
+        <button type="button" class="close"><img src="books/book_2.jpeg"></button>
     </div>
     <br>
 </body>
